@@ -13,7 +13,19 @@ export class PostService {
   }
 
   async findAll() {
-    return await this.db.select().from(posts);
+    return await this.db.query.posts.findMany({
+      with: {
+        author: {
+          with: {
+            usersToGroups: {
+              with: {
+                group: true,
+              },
+            },
+          },
+        },
+      },
+    });
   }
 
   findOne(id: number) {

@@ -1,0 +1,10 @@
+{
+  "build": {
+    "builder": "nixpacks",
+    "config": {
+      "buildCmd": "npm run build",
+      "startCmd": "npx serve@latest dist --single",
+      "installCmd": "npm ci --prefix=../../ && npm ci"
+    }
+  }
+}
