@@ -1,11 +1,13 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { CreateVisitorComment, DrizzleDB, visitorComments } from 'database';
+import { DrizzleDB, visitorComments } from 'database';
 import { DRIZZLE } from 'src/drizzle/drizzle.module';
+import { CreateVisitorCommentDto } from './dto';
 
 @Injectable()
 export class VisitorCommentService {
   constructor(@Inject(DRIZZLE) private readonly db: DrizzleDB) {}
-  create(createVisitorCommentDto: CreateVisitorComment) {
+
+  create(createVisitorCommentDto: CreateVisitorCommentDto) {
     return this.db.insert(visitorComments).values(createVisitorCommentDto);
   }
 
