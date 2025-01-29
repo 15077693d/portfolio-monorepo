@@ -1,8 +1,8 @@
 import './App.css'
-import { usePostsQuery } from './features/comment/query'
+import { useVisitorComments } from './features/visitorComment/query'
 
 function App() {
-    const { data: posts } = usePostsQuery()
+    const { data: posts } = useVisitorComments()
 
     return (
         <div className="container mx-auto p-4">
