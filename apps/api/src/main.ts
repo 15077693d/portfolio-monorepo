@@ -15,6 +15,33 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document); // Access Swagger UI at /api
 
-  await app.listen(3000);
+  // Configure CORS with whitelist
+  const whitelist = process.env.CLIENT_URLS?.split(',') || [
+    'http://localhost:3000',
+    'https://your-production-domain.com',
+  ];
+
+  app.enableCors({
+    origin: (origin, callback) => {
+      if (!origin || whitelist.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type, Authorization, X-Requested-With',
+    credentials: true,
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  });
+
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header('Access-Control-Allow-Credentials', 'true');
+    next();
+  });
+
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
