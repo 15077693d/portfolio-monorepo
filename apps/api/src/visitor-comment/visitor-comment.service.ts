@@ -1,7 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { CreateVisitorComment, DrizzleDB, visitorComments } from 'database';
 import { DRIZZLE } from 'src/drizzle/drizzle.module';
-import { CreateVisitorComment, visitorComments } from 'src/drizzle/schema';
-import { DrizzleDB } from 'src/drizzle/types/drizzle';
 
 @Injectable()
 export class VisitorCommentService {

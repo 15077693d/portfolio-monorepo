@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { CreateVisitorComment } from 'src/drizzle/schema';
+import { CreateVisitorComment } from 'database';
 import { VisitorCommentService } from './visitor-comment.service';
 
 @Controller('visitor-comment')

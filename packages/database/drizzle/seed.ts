@@ -1,15 +1,9 @@
-import { NodePgDatabase } from 'drizzle-orm/node-postgres';
+import { NodePgDatabase } from "drizzle-orm/node-postgres";
 
-import { faker } from '@faker-js/faker';
-import 'dotenv/config';
-import { drizzle } from 'drizzle-orm/node-postgres';
-import { Pool } from 'pg';
-import * as schema from './schema';
-
-const connectionString = process.env.DATABASE_URL as string;
-
-const pool = new Pool({ connectionString, ssl: true });
-const db = drizzle(pool, { schema }) as NodePgDatabase<typeof schema>;
+import { faker } from "@faker-js/faker";
+import "dotenv/config";
+import * as schema from "./schema";
+import { db } from "../database";
 
 async function main() {
   //clear all table
@@ -30,7 +24,7 @@ async function main() {
           name: faker.person.fullName(),
         })
         .returning();
-    }),
+    })
   );
   // const userIds = await Promise.all(
   //   Array.from({ length: 10 }).map(async () => {
@@ -97,7 +91,7 @@ async function main() {
 
 void main()
   .then(() => {
-    console.log('Seed completed');
+    console.log("Seed completed");
   })
   .catch((error) => {
     console.error(error);

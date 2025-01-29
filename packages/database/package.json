@@ -1,0 +1,22 @@
+{
+  "name": "database",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "db:seed": "ts-node ./drizzle/seed.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
+    "build": "tsc -b"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.30.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.39.0",
+    "pg": "^8.13.1",
+    "prettier-plugin-organize-imports": "^4.1.0"
+  }
+}
