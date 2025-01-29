@@ -17,8 +17,8 @@ async function bootstrap() {
 
   // Configure CORS with whitelist
   const whitelist = process.env.CLIENT_URLS?.split(',') || [
-    'http://localhost:3000',
-    'https://your-production-domain.com',
+    'http://localhost:5173',
+    'https://web-production-37f86.up.railway.app',
   ];
 
   app.enableCors({
@@ -34,12 +34,6 @@ async function bootstrap() {
     credentials: true,
     preflightContinue: false,
     optionsSuccessStatus: 204,
-  });
-
-  app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', req.headers.origin);
-    res.header('Access-Control-Allow-Credentials', 'true');
-    next();
   });
 
   await app.listen(process.env.PORT || 3000);
