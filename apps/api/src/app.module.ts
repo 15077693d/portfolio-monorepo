@@ -8,7 +8,7 @@ import { VisitorCommentModule } from './visitor-comment/visitor-comment.module';
 @Module({
   imports: [
     DrizzleModule,
-    ConfigModule.forRoot({ isGlobal: true, envFilePath: '../../.env' }),
+    ConfigModule.forRoot({ isGlobal: true }),
     VisitorCommentModule,
   ],
   controllers: [AppController],
