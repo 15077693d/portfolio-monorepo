@@ -1,7 +1,4 @@
-import { NodePgDatabase } from "drizzle-orm/node-postgres";
-
 import { faker } from "@faker-js/faker";
-import "dotenv/config";
 import * as schema from "./schema";
 import { db } from "../database";
 

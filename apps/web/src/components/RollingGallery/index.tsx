@@ -155,7 +155,7 @@ const RollingGallery = ({
                     {images.map((url, i) => (
                         <div
                             key={i}
-                            className="group absolute flex h-fit items-center justify-center p-[40px] [backface-visibility:hidden] sm:p-[60px]"
+                            className="group absolute flex h-fit items-center justify-center p-[30px] [backface-visibility:hidden] sm:p-[50px]"
                             style={{
                                 width: `${faceWidth}px`,
                                 transform: `rotateY(${
