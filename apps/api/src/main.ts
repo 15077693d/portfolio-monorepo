@@ -16,6 +16,10 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document); // Access Swagger UI at /api
 
   // Configure CORS with whitelist
+  console.log(
+    '🚀 ~ bootstrap ~ process.env.CLIENT_URLS:',
+    process.env.CLIENT_URLS,
+  );
   const whitelist = process.env.CLIENT_URLS?.split(',') || [
     'http://localhost:5173',
     'https://web-production-37f86.up.railway.app',
