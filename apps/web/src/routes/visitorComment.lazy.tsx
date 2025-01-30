@@ -1,8 +1,13 @@
 import { ErrorMessage } from '@hookform/error-message'
+import { createLazyFileRoute } from '@tanstack/react-router'
+import { type CreateVisitorComment as CreateVisitorCommentType } from 'database'
 import { useForm } from 'react-hook-form'
-import './App.css'
-import { useVisitorCommentMutation } from './features/VisitorComment/mutation'
-import { useVisitorComments } from './features/VisitorComment/query'
+import { useVisitorCommentMutation } from '../features/VisitorComment/hooks/useVisitorCommentMutation'
+import { useVisitorComments } from '../features/VisitorComment/hooks/useVisitorComments'
+
+export const Route = createLazyFileRoute('/visitorComment')({
+    component: VisitorComment,
+})
 
 function VisitorComment() {
     const { data: comments, isLoading } = useVisitorComments()
@@ -11,13 +16,10 @@ function VisitorComment() {
         handleSubmit,
         formState: { errors },
         reset,
-    } = useForm<{
-        name: string
-        content: string
-    }>()
+    } = useForm<CreateVisitorCommentType>()
     const { mutate, isPending } = useVisitorCommentMutation()
 
-    const onSubmit = (data: { name: string; content: string }) => {
+    const onSubmit = (data: CreateVisitorCommentType) => {
         mutate(data, {
             onSuccess: () => reset(),
         })
@@ -109,5 +111,3 @@ function VisitorComment() {
         </div>
     )
 }
-
-export default App

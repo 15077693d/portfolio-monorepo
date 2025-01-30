@@ -1,8 +1,8 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { CreateVisitorComment } from 'database'
-import { apiClient, QUERY_KEYS } from '../../constants/query'
+import { apiClient, QUERY_KEYS } from '../../../constants/query'
 
-export const usePostComment = () => {
+export const useVisitorCommentMutation = () => {
     const queryClient = useQueryClient()
 
     return useMutation({
