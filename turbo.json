@@ -2,10 +2,12 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build:web": {
+      "env": ["VITE_API_URL", "VITE_APP_ENV"],
       "dependsOn": ["^build:web"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"]
     },
     "build:api": {
+      "env": ["DATABASE_URL"],
       "dependsOn": ["^build:api"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"]
     },

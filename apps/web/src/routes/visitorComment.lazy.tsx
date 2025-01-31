@@ -10,6 +10,8 @@ export const Route = createLazyFileRoute('/visitorComment')({
 })
 
 function VisitorComment() {
+    const importMetaEnv = import.meta.env
+    console.log('🚀 ~ VisitorComment ~ importMetaEnv:', importMetaEnv)
     const { data: comments, isLoading } = useVisitorComments()
     const {
         register,
