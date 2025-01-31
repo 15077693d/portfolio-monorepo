@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/')({
 
 function Index() {
     const importMetaEnv = import.meta.env
-    console.log('🚀 ~ Index ~ importMetaEnv:', importMetaEnv)
+    console.log('🚀 ~ Index ~ importMetaEnv:2', importMetaEnv)
     return (
         <div className="relative">
             <h1 className=" font-black text-5xl text-center translate-y-[130px]">

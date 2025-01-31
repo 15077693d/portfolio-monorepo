@@ -4,7 +4,7 @@
     "build:web": {
       "env": ["VITE_API_URL", "VITE_APP_ENV"],
       "dependsOn": ["^build:web"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"]
+      "inputs": ["$TURBO_DEFAULT$"]
     },
     "build:api": {
       "env": ["DATABASE_URL"],
