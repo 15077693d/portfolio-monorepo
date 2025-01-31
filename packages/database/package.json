@@ -8,7 +8,9 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
-    "build": "tsc -b"
+    "build": "tsc -b",
+    "build:api": "tsc -b",
+    "build:web": "tsc -b"
   },
   "devDependencies": {
     "drizzle-kit": "^0.30.3"

@@ -1,8 +1,12 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
-    "build": {
-      "dependsOn": ["^build"],
+    "build:web": {
+      "dependsOn": ["^build:web"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"]
+    },
+    "build:api": {
+      "dependsOn": ["^build:api"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"]
     },
     "lint": {
@@ -17,6 +21,12 @@
     },
     "start": {
       "dependsOn": ["^start"]
+    },
+    "start:web": {
+      "dependsOn": ["^start:web"]
+    },
+    "start:api": {
+      "dependsOn": ["^start:api"]
     }
   }
 }
