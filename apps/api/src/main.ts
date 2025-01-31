@@ -14,6 +14,7 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document); // Access Swagger UI at /api
+  console.log('🚀 ~ bootstrap ~ process.env:', process.env);
 
   // Configure CORS with whitelist
   const whitelist = process.env.CLIENT_URLS?.split(',') || [
@@ -21,7 +22,6 @@ async function bootstrap() {
     'https://www.oscaryiu.com',
     'https://web-production-37f86.up.railway.app',
   ];
-  console.log('🚀 ~ bootstrap ~ whitelist:', whitelist);
 
   app.enableCors({
     origin: (origin, callback) => {
