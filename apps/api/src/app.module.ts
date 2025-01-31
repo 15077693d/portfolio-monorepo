@@ -10,7 +10,7 @@ import { VisitorCommentModule } from './visitor-comment/visitor-comment.module';
     DrizzleModule,
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: ['../../.env'],
+      //envFilePath: ['../../.env'],
     }),
     VisitorCommentModule,
   ],
