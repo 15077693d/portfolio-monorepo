@@ -3,18 +3,10 @@
   "tasks": {
     "build:web": {},
     "build:api": {},
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
-    "check-types": {
-      "dependsOn": ["^check-types"]
-    },
     "dev": {},
     "start": {},
     "build": {},
     "start:web": {},
-    "start:api": {
-      "dependsOn": ["^start:api"]
-    }
+    "start:api": {}
   }
 }
