@@ -2,7 +2,7 @@
   "name": "portfolio-monorepo",
   "private": true,
   "scripts": {
-    "build": "turbo build",
+    "build": "turbo build --env-mode=loose",
     "build:api": "turbo build:api --env-mode=loose",
     "build:web": "turbo build:web --env-mode=loose",
     "start": "turbo start",

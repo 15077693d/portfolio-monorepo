@@ -1,27 +1,17 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
-    "build:web": {
-      "dependsOn": ["^build:web"]
-    },
-    "build:api": {
-      "env": ["DATABASE_URL"],
-      "dependsOn": ["^build:api"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"]
-    },
+    "build:web": {},
+    "build:api": {},
     "lint": {
       "dependsOn": ["^lint"]
     },
     "check-types": {
       "dependsOn": ["^check-types"]
     },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "start": {
-      "dependsOn": ["^start"]
-    },
+    "dev": {},
+    "start": {},
+    "build": {},
     "start:web": {},
     "start:api": {
       "dependsOn": ["^start:api"]
