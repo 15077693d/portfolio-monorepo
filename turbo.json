@@ -7,10 +7,11 @@
     "build:api": {
       "inputs": [".env"]
     },
-    "dev": {},
-    "start": {},
+    "dev": { "inputs": [".env"] },
+    "start": { "inputs": [".env"] },
     "build": { "inputs": [".env"] },
-    "start:web": {},
-    "start:api": {}
-  }
+    "start:web": { "inputs": [".env"] },
+    "start:api": { "inputs": [".env"] }
+  },
+  "daemon": false
 }

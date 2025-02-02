@@ -8,9 +8,7 @@
     "start": "turbo start  --env-mode=loose",
     "start:api": "turbo start:api  --env-mode=loose",
     "start:web": "turbo start:web  --env-mode=loose",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "dev": "turbo dev --env-mode=loose"
   },
   "devDependencies": {
     "prettier": "^3.4.2",

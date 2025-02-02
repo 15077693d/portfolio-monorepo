@@ -17,11 +17,7 @@ async function bootstrap() {
   console.log('🚀 ~ bootstrap ~ process.env:', process.env);
 
   // Configure CORS with whitelist
-  const whitelist = process.env.CLIENT_URLS?.split(',') || [
-    'https://oscaryiu.com',
-    'https://www.oscaryiu.com',
-    'https://web-production-37f86.up.railway.app',
-  ];
+  const whitelist = process.env.CLIENT_URLS?.split(',') || [];
 
   app.enableCors({
     origin: (origin, callback) => {
@@ -40,4 +36,4 @@ async function bootstrap() {
 
   await app.listen(process.env.PORT || 3000);
 }
-bootstrap();
+void bootstrap();
