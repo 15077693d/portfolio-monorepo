@@ -18,7 +18,12 @@ async function bootstrap() {
 
   // Configure CORS with whitelist
   const whitelist = process.env.CLIENT_URLS?.split(',') || [];
-
+  console.log(
+    '🚀 ~ bootstrap ~ whitelist:',
+    whitelist,
+    process.env.CLIENT_URLS?.split(','),
+    process.env.CLIENT_URLS,
+  );
   app.enableCors({
     origin: (origin, callback) => {
       if (!origin || whitelist.indexOf(origin) !== -1) {
@@ -34,6 +39,6 @@ async function bootstrap() {
     optionsSuccessStatus: 204,
   });
 
-  await app.listen(process.env.PORT || 3000);
+  await app.listen(3000);
 }
 void bootstrap();
