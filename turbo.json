@@ -1,17 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
-    "build:web": {
-      "inputs": [".env"]
-    },
-    "build:api": {
-      "inputs": [".env"]
-    },
-    "dev": { "inputs": [".env"] },
-    "start": { "inputs": [".env"] },
-    "build": { "inputs": [".env"] },
-    "start:web": { "inputs": [".env"] },
-    "start:api": { "inputs": [".env"] }
+    "build:web": {},
+    "build:api": {},
+    "dev": {},
+    "start": {},
+    "build": {},
+    "start:web": {},
+    "start:api": {}
   },
   "daemon": false
 }
