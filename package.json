@@ -5,9 +5,9 @@
     "build": "turbo build --env-mode=loose",
     "build:api": "turbo build:api --env-mode=loose",
     "build:web": "turbo build:web --env-mode=loose",
-    "start": "turbo start",
-    "start:api": "turbo start:api",
-    "start:web": "turbo start:web",
+    "start": "turbo start  --env-mode=loose",
+    "start:api": "turbo start:api  --env-mode=loose",
+    "start:web": "turbo start:web  --env-mode=loose",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""

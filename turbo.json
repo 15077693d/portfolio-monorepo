@@ -1,11 +1,15 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
-    "build:web": {},
-    "build:api": {},
+    "build:web": {
+      "inputs": [".env"]
+    },
+    "build:api": {
+      "inputs": [".env"]
+    },
     "dev": {},
     "start": {},
-    "build": {},
+    "build": { "inputs": [".env"] },
     "start:web": {},
     "start:api": {}
   }
